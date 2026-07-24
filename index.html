@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09070d">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/logo.png">
+<title>VEX Store</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+<div class="cursor"></div>
+
+<nav>
+<div class="logo">
+<img src="img/logo.png" alt="VEX logo">
+<h2>VEX</h2>
+</div>
+
+<ul>
+<li><a href="#">Inicio</a></li>
+<li><a href="#ropa">Ropa</a></li>
+<li><a href="#dulceria">Dulcería</a></li>
+<li><a href="#productos" id="show-all-products">Productos</a></li>
+<li><a href="#cuenta">Mi cuenta</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+
+<div class="nav-icons">
+<i class="fa-solid fa-magnifying-glass"></i>
+<i class="fa-solid fa-cart-shopping" id="open-cart"></i>
+<a href="login.html" class="account-link" id="login-link" aria-label="Iniciar sesión">
+<i class="fa-solid fa-user"></i>
+</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-left">
+<h1>VEX STORE</h1>
+<h2>Moda & Dulcería Premium</h2>
+<p>
+La experiencia más moderna para comprar ropa,
+accesorios y dulces exclusivos.
+</p>
+<button id="explorar">Explorar Colección</button>
+</div>
+
+<div class="hero-right">
+<img src="img/logo.png" alt="VEX logo">
+</div>
+</section>
+
+<section class="stats">
+<div class="stat">
+<h3>+500</h3>
+<p>Productos</p>
+</div>
+<div class="stat">
+<h3>+1200</h3>
+<p>Clientes</p>
+</div>
+<div class="stat">
+<h3>24/7</h3>
+<p>Atención</p>
+</div>
+</section>
+
+<section id="ropa" class="category-section">
+<div class="category-card ropa">
+<div class="overlay"></div>
+<h2>ROPA</h2>
+<p>Sudaderas, camisetas, gorras y outfits exclusivos.</p>
+<button type="button" class="category-filter" data-filter="ropa">Ver Más</button>
+</div>
+
+<div id="dulceria" class="category-card dulceria">
+<div class="overlay"></div>
+<h2>DULCERÍA</h2>
+<p>Chocolates, snacks, gomas y mucho más.</p>
+<button type="button" class="category-filter" data-filter="dulceria">Comprar</button>
+</div>
+</section>
+
+<section id="productos" class="products catalog-hidden">
+<h2 id="products-title">Productos Destacados</h2>
+
+<div class="products-grid">
+<div class="product-card" data-category="ropa">
+<div class="shine"></div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos">
+<i class="fa-regular fa-heart"></i>
+</button>
+<h3>Hoodie VEX</h3>
+<span>$89.900</span>
+<img class="product-img" src="img/hoddie.jpg" alt="Hoodie VEX">
+<button class="add-cart">Agregar</button>
+</div>
+
+<div class="product-card" data-category="ropa">
+<div class="shine"></div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos">
+<i class="fa-regular fa-heart"></i>
+</button>
+<h3>Gorra VEX</h3>
+<span>$39.900</span>
+<img class="product-img" src="img/gorra vex.png" alt="Gorra VEX">
+<button class="add-cart">Agregar</button>
+</div>
+
+<div class="product-card" data-category="ropa">
+<div class="shine"></div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos">
+<i class="fa-regular fa-heart"></i>
+</button>
+<h3>Camiseta VEX</h3>
+<span>$59.900</span>
+<img class="product-img" src="img/CAMISETA VEX.png" alt="Camiseta VEX">
+<button class="add-cart">Agregar</button>
+</div>
+
+<div class="product-card" data-category="ropa">
+<div class="shine"></div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos">
+<i class="fa-regular fa-heart"></i>
+</button>
+<h3>Outfit VEX</h3>
+<span>$149.900</span>
+<img class="product-img" src="img/Outfit VEX.png" alt="Outfit VEX">
+<button class="add-cart">Agregar</button>
+</div>
+
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div>
+<div class="product-badge hot">Más vendido</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos">
+<i class="fa-regular fa-heart"></i>
+</button>
+<h3>Caja Dulce</h3>
+<span>$24.900</span>
+<img class="product-img" src="img/caja dulces.jpg" alt="Caja Dulce">
+<button class="add-cart">Agregar</button>
+</div>
+
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos">
+<i class="fa-regular fa-heart"></i>
+</button>
+<h3>Combo Premium</h3>
+<span>$129.900</span>
+<img class="product-img" src="img/Combo premiun.png" alt="Combo Premium">
+<button class="add-cart">Agregar</button>
+</div>
+
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos">
+<i class="fa-regular fa-heart"></i>
+</button>
+<h3>Mix de Gomitas</h3>
+<span>$18.900</span>
+<img class="product-img" src="img/MIX DE GOMITAS.webp" alt="Mix de Gomitas">
+<button class="add-cart">Agregar</button>
+</div>
+
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos">
+<i class="fa-regular fa-heart"></i>
+</button>
+<h3>Pack Chocolates</h3>
+<span>$32.900</span>
+<img class="product-img" src="img/Combo premiun.png" alt="Pack Chocolates">
+<button class="add-cart">Agregar</button>
+</div>
+
+<div class="product-card" data-category="ropa">
+<div class="shine"></div><div class="product-badge new">Nuevo</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Hoodie Midnight</h3><span>$99.900</span><img class="product-img" src="img/hoddie.jpg" alt="Hoodie Midnight"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="ropa">
+<div class="shine"></div><div class="product-badge">Edición VEX</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Camiseta Oversize</h3><span>$64.900</span><img class="product-img" src="img/hoddie.jpg" alt="Camiseta Oversize"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="ropa">
+<div class="shine"></div><div class="product-badge hot">Top</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Jogger Urban</h3><span>$84.900</span><img class="product-img" src="img/hoddie.jpg" alt="Jogger Urban"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="ropa">
+<div class="shine"></div><div class="product-badge new">Nuevo</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Chaqueta Varsity</h3><span>$139.900</span><img class="product-img" src="img/hoddie.jpg" alt="Chaqueta Varsity"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="ropa">
+<div class="shine"></div><div class="product-badge">Accesorio</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Gorra Shadow</h3><span>$44.900</span><img class="product-img" src="img/gorra vex.png" alt="Gorra Shadow"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="ropa">
+<div class="shine"></div><div class="product-badge">Accesorio</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Tote Bag VEX</h3><span>$29.900</span><img class="product-img" src="img/gorra vex.png" alt="Tote Bag VEX"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div><div class="product-badge new">Nuevo</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Brownie Intenso</h3><span>$14.900</span><img class="product-img" src="img/caja dulces.jpg" alt="Brownie Intenso"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div><div class="product-badge hot">Favorito</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Kit Cine Dulce</h3><span>$44.900</span><img class="product-img" src="img/Combo premiun.png" alt="Kit Cine Dulce"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div><div class="product-badge">Premium</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Trufas VEX</h3><span>$22.900</span><img class="product-img" src="img/caja dulces.jpg" alt="Trufas VEX"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div><div class="product-badge new">Nuevo</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Gomitas Ácidas</h3><span>$16.900</span><img class="product-img" src="img/caja dulces.jpg" alt="Gomitas Ácidas"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div><div class="product-badge">Combo</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Snack Box VEX</h3><span>$36.900</span><img class="product-img" src="img/Combo premiun.png" alt="Snack Box VEX"><button class="add-cart">Agregar</button>
+</div>
+<div class="product-card" data-category="dulceria">
+<div class="shine"></div><div class="product-badge hot">Oferta</div>
+<button class="favorite-btn" type="button" aria-label="Agregar a favoritos"><i class="fa-regular fa-heart"></i></button>
+<h3>Mini Dulces Mix</h3><span>$12.900</span><img class="product-img" src="img/caja dulces.jpg" alt="Mini Dulces Mix"><button class="add-cart">Agregar</button>
+</div>
+</div>
+</section>
+
+<section id="cuenta" class="account-section">
+<div class="account-header">
+<div>
+<span>Zona de cliente</span>
+<h2>Mi perfil VEX</h2>
+</div>
+<div class="account-actions" id="guest-actions">
+<a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a>
+<a href="registro.html"><i class="fa-solid fa-user-plus"></i> Registrarse</a>
+</div>
+<button id="logout-btn" class="logout-btn hidden" type="button">
+<i class="fa-solid fa-arrow-right-from-bracket"></i>
+Cerrar sesión
+</button>
+<a id="admin-dashboard-link" class="admin-dashboard-link hidden" href="admin.html">
+<i class="fa-solid fa-chart-line"></i>
+Panel administrador
+</a>
+</div>
+
+<div class="account-grid">
+<article class="profile-card">
+<div class="profile-avatar">
+<i class="fa-solid fa-user"></i>
+</div>
+<div id="profile-info"></div>
+</article>
+
+<article class="account-card">
+<div class="account-card-title">
+<i class="fa-solid fa-bag-shopping"></i>
+<h3>Pedidos y compras</h3>
+</div>
+<div id="orders-list"></div>
+</article>
+
+<article class="account-card">
+<div class="account-card-title">
+<i class="fa-solid fa-heart"></i>
+<h3>Favoritos</h3>
+</div>
+<div id="favorites-list"></div>
+</article>
+</div>
+</section>
+
+<div id="tracking-modal" class="tracking-modal hidden" role="dialog" aria-modal="true" aria-labelledby="tracking-title">
+<div class="tracking-card">
+<button id="close-tracking" class="close-tracking" type="button" aria-label="Cerrar seguimiento"><i class="fa-solid fa-xmark"></i></button>
+<div class="tracking-heading">
+<span><i class="fa-solid fa-location-crosshairs"></i> Seguimiento en tiempo real</span>
+<h2 id="tracking-title">Tu pedido está siendo preparado</h2>
+<p id="tracking-subtitle"></p>
+</div>
+<div id="delivery-map" class="delivery-map status-0">
+<div class="map-label store-label"><i class="fa-solid fa-store"></i> VEX Store</div>
+<div class="route-line"></div>
+<div id="courier-marker" class="courier-marker"><i class="fa-solid fa-motorcycle"></i></div>
+<div class="map-label home-label"><i class="fa-solid fa-house"></i> Tu dirección</div>
+</div>
+<div class="map-legend"><span><i class="fa-solid fa-store"></i> Origen</span><span><i class="fa-solid fa-motorcycle"></i> Repartidor</span><span><i class="fa-solid fa-house"></i> Destino</span></div>
+<div id="tracking-steps" class="tracking-steps"></div>
+<div class="tracking-note"><i class="fa-solid fa-circle-info"></i> Ubicación y avance simulados para esta demostración.</div>
+</div>
+</div>
+
+<div id="image-modal" class="image-modal hidden">
+<button id="close-image-modal" class="image-modal-close" aria-label="Cerrar imagen">
+<i class="fa-solid fa-xmark"></i>
+</button>
+<div class="image-modal-content">
+<div class="image-zoom-stage"><img id="modal-product-img" src="" alt=""></div>
+<div class="image-modal-info">
+<span>Vista ampliada</span>
+<h3 id="modal-product-name"></h3>
+<p id="modal-product-description" class="modal-product-description"></p>
+<div class="zoom-controls">
+<button type="button" id="zoom-out" aria-label="Alejar imagen">
+<i class="fa-solid fa-minus"></i>
+</button>
+<button type="button" id="zoom-reset" aria-label="Restablecer zoom">
+<i class="fa-solid fa-rotate-left"></i>
+</button>
+<button type="button" id="zoom-in" aria-label="Acercar imagen">
+<i class="fa-solid fa-plus"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<footer id="contacto">
+<h2>VEX STORE</h2>
+<p>© 2026 Todos los derechos reservados</p>
+</footer>
+
+<div id="cart-overlay" class="hidden"></div>
+<aside id="cart-panel" class="cart-panel hidden">
+<div class="cart-header">
+<div>
+<span>Tu compra</span>
+<h3>Carrito VEX</h3>
+</div>
+<button id="close-cart" class="close-cart" aria-label="Cerrar carrito">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+<div id="cart-items"></div>
+<div id="cart-total"></div>
+
+<form id="checkout-form">
+<h4>Datos de entrega</h4>
+<div class="checkout-field">
+<i class="fa-solid fa-user"></i>
+<input type="text" id="customer-name" placeholder="Nombre" required>
+</div>
+<div class="checkout-field">
+<i class="fa-solid fa-location-dot"></i>
+<input type="text" id="customer-address" placeholder="Dirección" required>
+</div>
+<label for="delivery-date">Fecha de entrega estimada</label>
+<div class="checkout-field">
+<i class="fa-solid fa-calendar-days"></i>
+<input type="date" id="delivery-date" required>
+</div>
+<div class="payment-methods">
+<div class="payment-title">
+<span>Pago seguro</span>
+<small>Selecciona cómo quieres pagar</small>
+</div>
+<div class="payment-options" role="radiogroup" aria-label="Método de pago">
+<label class="payment-option selected">
+<input type="radio" name="payment-method" value="Nequi" checked>
+<span class="payment-icon nequi"><i class="fa-solid fa-mobile-screen-button"></i></span>
+<span><strong>Nequi</strong><small>Confirma desde tu celular</small></span>
+<i class="fa-solid fa-circle-check payment-check"></i>
+</label>
+<label class="payment-option">
+<input type="radio" name="payment-method" value="Daviplata">
+<span class="payment-icon daviplata">D</span>
+<span><strong>Daviplata</strong><small>Pago rápido y seguro</small></span>
+<i class="fa-solid fa-circle-check payment-check"></i>
+</label>
+<label class="payment-option">
+<input type="radio" name="payment-method" value="Tarjeta">
+<span class="payment-icon card"><i class="fa-solid fa-credit-card"></i></span>
+<span><strong>Tarjeta</strong><small>Crédito o débito</small></span>
+<i class="fa-solid fa-circle-check payment-check"></i>
+</label>
+<label class="payment-option">
+<input type="radio" name="payment-method" value="PSE">
+<span class="payment-icon pse">PSE</span>
+<span><strong>PSE</strong><small>Transferencia bancaria</small></span>
+<i class="fa-solid fa-circle-check payment-check"></i>
+</label>
+</div>
+<p id="payment-help" class="payment-help"><i class="fa-solid fa-shield-halved"></i> Serás dirigido a Nequi para confirmar tu pago.</p>
+</div>
+<button type="submit">
+<i class="fa-solid fa-lock"></i>
+Pagar pedido
+</button>
+</form>
+</aside>
+
+<script src="java.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js"));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09070d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/logo.png">
+<title>Administrador | VEX Store</title>
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="admin-enhancements.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<aside class="sidebar">
+<a class="brand" href="index.html"><img src="img/logo.png" alt="VEX"><span>VEX <small>ADMIN</small></span></a>
+<nav>
+<a class="active" href="#resumen"><i class="fa-solid fa-chart-line"></i> Resumen</a>
+<a href="#pedidos"><i class="fa-solid fa-bag-shopping"></i> Pedidos</a>
+<a href="#estadisticas"><i class="fa-solid fa-chart-pie"></i> Estadísticas</a>
+<a href="index.html"><i class="fa-solid fa-store"></i> Ver tienda</a>
+</nav>
+<button id="logout-admin"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</button>
+</aside>
+
+<main>
+<header class="topbar">
+<div><p>Panel de control</p><h1>Hola, Administrador</h1></div>
+<div class="admin-badge"><span></span> Tienda operativa</div>
+</header>
+
+<section id="resumen" class="metrics">
+<article class="metric-card sales"><div class="metric-icon"><i class="fa-solid fa-sack-dollar"></i></div><div><p>Ventas totales</p><h2 id="total-sales">$0</h2><small id="sales-count">0 pedidos</small></div></article>
+<article class="metric-card profit"><div class="metric-icon"><i class="fa-solid fa-arrow-trend-up"></i></div><div><p>Ganancia estimada</p><h2 id="total-profit">$0</h2><small>Margen estimado: 60%</small></div></article>
+<article class="metric-card orders"><div class="metric-icon"><i class="fa-solid fa-box-open"></i></div><div><p>Pedidos</p><h2 id="total-orders">0</h2><small id="pending-orders">0 pendientes de entrega</small></div></article>
+<article class="metric-card products"><div class="metric-icon"><i class="fa-solid fa-cart-flatbed"></i></div><div><p>Productos vendidos</p><h2 id="products-sold">0</h2><small>Unidades en pedidos</small></div></article>
+</section>
+
+<section class="dashboard-grid">
+<article class="panel revenue-panel"><div class="panel-heading"><div><p>Rendimiento</p><h2>Ventas por pedido</h2></div><i class="fa-solid fa-chart-column"></i></div><div id="sales-chart" class="sales-chart"></div></article>
+<article id="estadisticas" class="panel status-panel"><div class="panel-heading"><div><p>Logística</p><h2>Estado de pedidos</h2></div><i class="fa-solid fa-truck-fast"></i></div><div id="status-summary" class="status-summary"></div></article>
+</section>
+
+<section id="pedidos" class="panel orders-panel">
+<div class="panel-heading"><div><p>Gestión</p><h2>Todos los pedidos</h2></div><button id="refresh-dashboard"><i class="fa-solid fa-rotate"></i> Actualizar</button></div>
+<div class="table-wrap"><table><thead><tr><th>Pedido</th><th>Cliente</th><th>Productos</th><th>Pago</th><th>Total</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="admin-orders"></tbody></table></div>
+<p id="empty-admin-orders" class="empty-message hidden">Aún no hay pedidos. Las compras de la tienda aparecerán aquí.</p>
+</section>
+
+<section class="panel inventory-panel">
+<div class="panel-heading"><div><p>Catálogo</p><h2>Editar precios</h2></div><button id="save-prices"><i class="fa-solid fa-floppy-disk"></i> Guardar precios</button></div>
+<p class="panel-description">Estos precios se aplican en la tienda cuando el cliente recargue la página.</p>
+<div id="price-editor" class="price-editor"></div>
+</section>
+<section class="panel inventory-panel photo-panel">
+<div class="panel-heading"><div><p>Catálogo</p><h2>Fotos de productos</h2></div><button id="save-images"><i class="fa-solid fa-images"></i> Guardar fotos</button></div>
+<p class="panel-description">Agrega o reemplaza la foto de cada producto. Los cambios se verán en la tienda al recargar la página.</p>
+<label class="bulk-image-upload"><i class="fa-solid fa-wand-magic-sparkles"></i> Cargar varias fotos por nombre<input id="bulk-product-images" type="file" accept="image/*" multiple></label>
+<p class="bulk-image-help">El nombre del archivo debe ser el mismo del producto. Ejemplo: <strong>Hoodie VEX.jpg</strong>.</p>
+<div id="image-editor" class="image-editor"></div>
+</section>
+</main>
+
+<div id="admin-map-modal" class="admin-modal hidden">
+<div class="admin-modal-card">
+<button id="close-admin-map" class="modal-close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+<p class="modal-eyebrow">Control de entrega</p><h2 id="admin-map-title">Pedido</h2><p id="admin-map-customer" class="modal-customer"></p>
+<div id="admin-delivery-map" class="admin-delivery-map status-0"><div class="admin-route"></div><span class="map-point origin"><i class="fa-solid fa-store"></i></span><span class="map-point destination"><i class="fa-solid fa-house"></i></span><span class="admin-courier"><i class="fa-solid fa-motorcycle"></i></span></div>
+<form id="delivery-control-form" class="delivery-control-form">
+<label>Estado del pedido<select id="admin-order-status"><option value="0">Confirmado</option><option value="1">En empaque</option><option value="2">En camino</option><option value="3">Entregado</option></select></label>
+<label>Ubicación que verá el cliente<input id="admin-order-location" type="text" placeholder="Ej. Sector Centro, a 8 min del destino"></label>
+<button type="submit"><i class="fa-solid fa-location-crosshairs"></i> Actualizar seguimiento</button>
+</form>
+</div>
+</div>
+<script src="admin.js"></script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("./service-worker.js");</script>
+</body>
+</html>

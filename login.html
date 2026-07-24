@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09070d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/logo.png">
+<title>Login | VEX STORE</title>
+<link rel="stylesheet" href="login.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+<div class="background"></div>
+
+<div class="login-box">
+<img src="img/logo.png" class="logo" alt="VEX logo">
+<h1>Bienvenido</h1>
+<p>Inicia sesión en VEX STORE</p>
+
+<form id="loginForm">
+<div class="input-box">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" id="correo" placeholder="Correo electrónico" required>
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password" id="password" placeholder="Contraseña" required>
+<i class="fa-solid fa-eye" id="mostrar"></i>
+</div>
+
+<label class="remember">
+<input type="checkbox" id="recordar">
+Recordarme
+</label>
+
+<button type="submit">Ingresar</button>
+<p id="mensaje"></p>
+</form>
+
+<div class="links">
+<a href="registro.html">Crear cuenta</a>
+</div>
+</div>
+
+<script src="login.js"></script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("./service-worker.js");</script>
+</body>
+</html>
